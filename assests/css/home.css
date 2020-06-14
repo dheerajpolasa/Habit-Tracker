@@ -1,0 +1,59 @@
+body {
+    background-color: #FAACA8;
+background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
+}
+h1, p, h2 {
+    color: white;
+}
+h1 {
+    text-align: center;
+}
+form {
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    align-self: center;
+    text-align: center;
+}
+
+#habits-container {
+    text-align: center;
+}
+
+#habits-container a {
+    text-decoration: none;
+}
+
+#habits-container p {
+    /* display: inline; */
+}
+
+.habits {
+    /* width: 200px; */
+    /* height: 80px; */
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 2px;
+    padding: 10px;
+    border: 2px solid black;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;    
+    align-content: space-around; */
+}
+
+.habits p {
+    /* margin-right: 10px;
+    margin-left: -45px; */
+}
+
+.habits a {
+    margin: 20px;
+    color: black;
+}
+
+input {
+    background-color: lightyellow;
+}

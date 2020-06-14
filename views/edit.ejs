@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/edit.css">
+<body>
+<section>
+    <a href="/" id="home">Home</a>
+<h1><%= output[0].habit['habitName'] %></h1>
+<div>
+    <p>Done</p>
+    <p>Not Done</p>
+    <p>Blank</p>
+</div>
+<% for(habitJSON of output) {%>
+
+    <form action="/habit/update/<%=habitJSON.habit._id%>" method="POST">
+        <input type="text" name="date" value="<%= habitJSON.date %>" disabled>
+        <% if(habitJSON.habit.status === 'done') {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="done" class="r1" checked>
+        <%} else {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="done" class="r1">
+        <%}%>
+        <% if(habitJSON.habit.status === 'not-done') {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="not-done" class="r2" checked>
+        <%} else {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="not-done" class="r2">
+        <%}%>
+        <% if(habitJSON.habit.status === 'Blank') {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="blank" class="r3" checked>
+        <%} else {%>
+            <input type="radio" name="status-<%= habitJSON.habit.date%>" value="blank" class="r3">
+        <%}%>
+        <input type="hidden" value="habitJSON.habit.date" >
+        <input type="submit" class="btn btn-secondary" value="Update">
+    </form>
+<%}%>
+
+<div id="streak">
+    <p>Longest Streak <%= habitJSON.maintainedStreak %>/<%= habitJSON.totalStreak %></p>
+</div>
+
+</section>
+
+</body>
